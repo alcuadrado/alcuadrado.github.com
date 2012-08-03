@@ -5,20 +5,78 @@
         <title>Patricio Palladino</title>
         <style>
             body {
-                background: url("bg.png") #222;
+                color: #1A1A1A;
+                background: url("bg.jpg");
                 font-family: verdana;
+                padding: 0;
+                margin: 0;
+            }
+
+            @media all and (min-width: 1681px) {
+                body {
+                    background-size: cover;
+                }
+            }
+
+            @media all and (min-height: 1051px) {
+                body {
+                    background-size: cover;
+                }
             }
 
             h1 {
-                color: #EEE;
-                font-size: 50px;
-                text-align: center;
-                text-shadow: 0px 0px 3px #747474;
-                margin: 150px 0;
+                font-size: 40px;
+                margin: 0;
+                padding: 0;
+            }
+
+            div {
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -250px;
+                margin-left: -350px;
+                border-radius: 15px;
+                width: 600px;
+                height: 440px;
+                padding: 30px 50px;
+                background-color: #FFF;
+                background-color: rgba(255, 255, 255, 0.85);
+                          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D8FFFFFF,endColorstr=#D8FFFFFF); /* IE6–IE9 */
+                            zoom: 1;
+            }
+
+            p {
+                font-size: 22px;
+                line-height: 40px;
+                text-align: justify; text-justify: newspaper;
+            }
+
+            a {
+                color: #1A1A1A;
+            }
+
+            a:hover {
+                color: #666;
             }
         </style>
     </head>
     <body>
-        <h1>Patricio Palladino</h1>
+        <div>
+            <h1>Patricio Palladino</h1>
+            <p>
+                I'm a software developer and <a href="http://dc.uba.ar">computer
+                sciences major</a> who lives in Buenos Aires.
+            </p>
+            <p>
+                I have been consulting on PHP (yes, I admit it!) and frontend
+                web development for five years, but I'm currently interested in
+                system programming, research, and my own projects, though I can
+                make exceptions for interesting stuff.
+            </p>
+            <p>
+                To get in touch just send me an <a href="http://www.google.com/recaptcha/mailhide/d?k=015jNyUwb5krY_855ESlq8vg==&c=JamIaqZXM7GDH5d4QGYtFcW5CpWDn9GvvYWek28MRwQ=">email</a>!
+            </p>
+        </div>
     </body>
 </html>
