@@ -193,3 +193,27 @@ p code {
     margin: 1em 0;
     text-align: justify; text-justify: newspaper;
 }
+
+#container.home #share,
+#container.notfound  #share,
+#container.archive  #share {
+    display: none;
+}
+
+#share {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+#share * {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    text-decoration: none;
+    vertical-align: bottom;
+}
+
+.hn-share-iframe {
+    height: 18px !important;
+}
