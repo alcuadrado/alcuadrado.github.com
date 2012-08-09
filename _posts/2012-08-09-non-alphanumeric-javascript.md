@@ -18,9 +18,9 @@ Non alphanumeric JavaScript
 > What do you know about non-alphanumeric XSS?
 
 The other day one of [my friends](http://mfsec.com.ar/) asked me that question
-on {% raw %}<a href="irc://irc.mfsec.com.ar:+6697/mfsec">IRC</a>{% endraw %},
-pointing me to some articles on [sla.ckers.org](http://sla.ckers.org) where they
-tried to create some scripts like `alert(1)` with non-alphanumeric characters.
+on IRC, pointing me to some articles on [sla.ckers.org](http://sla.ckers.org)
+where they tried to create some scripts like `alert(1)` with non-alphanumeric
+characters.
 
 As a security researcher and a penetration tester, he insisted that extending
 that concept to any javascript source would be really useful for bypassing
@@ -84,7 +84,8 @@ two strings and casted them into a number like this: `+("1"+2)`.
 
 Having said that, here is a table of all the possible digits:
 
-{% raw %}<div class="codeblock">{% endraw %}
+<div class="codeblock">
+
 {% highlight javascript linenos=table anchorlinenos=true lineanchors=codeblock2 %}
 0 +[]
 1 +!![]
@@ -97,7 +98,8 @@ Having said that, here is a table of all the possible digits:
 8 !+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]
 9 !+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]
 {% endhighlight %}
-{% raw %}</div>{% endraw %}
+
+</div>
 
 Base elements and strings
 -------------------------
@@ -164,11 +166,13 @@ But how can we obtain the `window.location` object if we don't have access to
 `window` yet? Luckly JavaScript, being so premissive, would give that object by
 doing this:
 
-{% raw %}<div class="codeblock">{% endraw %}
+<div class="codeblock">
+
 {% highlight javascript linenos=table anchorlinenos=true lineanchors=codeblock8 %}
 Function("return location")()
 {% endhighlight %}
-{% raw %}</div>{% endraw %}
+
+</div>
 
 And with `location` now we can have three more characters `"h"`, `"p"`, `"/"`,
 `escape` and `unescape` functions!
@@ -179,11 +183,13 @@ If we could get the character `"%"` we would be able to get the rest by calling
 
 Now, we can reach any ASCII character like this:
 
-{% raw %}<div class="codeblock">{% endraw %}
+<div class="codeblock">
+
 {% highlight javascript linenos=table anchorlinenos=true lineanchors=codeblock3 %}
 [][(![]+[])[+[]+!![]+!![]+!![]]+({}+[])[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+({}+[])[+!![]]+([][+[]]+[])[+!![]]+(![]+[])[+[]+!![]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+[]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(!![]+[])[+[]]+({}+[])[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+(!![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][+[]]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+!![]]+({}+[])[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+([][+[]]+[])[+[]]+([][+[]]+[])[+!![]]+(!![]+[])[!+[]+!![]+!![]]+(![]+[])[+[]+!![]+!![]+!![]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(+{}+[])[+!![]]+([]+[][(![]+[])[+[]+!![]+!![]+!![]]+({}+[])[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+({}+[])[+!![]]+([][+[]]+[])[+!![]]+(![]+[])[+[]+!![]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+[]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(!![]+[])[+[]]+({}+[])[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+(!![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][+[]]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+!![]]+({}+[])[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(![]+[])[+[]+!![]+!![]]+({}+[])[+!![]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(+{}+[])[+!![]]+(!![]+[])[+[]]+([][+[]]+[])[!+[]+!![]+!![]+!![]+!![]]+({}+[])[+!![]]+([][+[]]+[])[+!![]])())[!+[]+!![]+!![]]+(!![]+[])[!+[]+!![]+!![]])()([][(![]+[])[+[]+!![]+!![]+!![]]+({}+[])[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+({}+[])[+!![]]+([][+[]]+[])[+!![]]+(![]+[])[+[]+!![]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+[]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(!![]+[])[+[]]+({}+[])[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+(!![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][+[]]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+!![]]+({}+[])[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(!![]+[])[!+[]+!![]+!![]]+(![]+[])[+[]+!![]+!![]+!![]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(+{}+[])[+!![]]+([]+[][(![]+[])[+[]+!![]+!![]+!![]]+({}+[])[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+({}+[])[+!![]]+([][+[]]+[])[+!![]]+(![]+[])[+[]+!![]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+[]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(!![]+[])[+[]]+({}+[])[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+(!![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][+[]]+[])[+[]]+(!![]+[])[+!![]]+([][+[]]+[])[+!![]]+({}+[])[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(![]+[])[+[]+!![]+!![]]+({}+[])[+!![]]+({}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]+(+{}+[])[+!![]]+(!![]+[])[+[]]+([][+[]]+[])[!+[]+!![]+!![]+!![]+!![]]+({}+[])[+!![]]+([][+[]]+[])[+!![]])())[!+[]+!![]+!![]]+(!![]+[])[!+[]+!![]+!![]])()(({}+[])[+[]])[+[]]+HEXA_VALUE)
 {% endhighlight %}
-{% raw %}</div>{% endraw %}
+
+</div>
 
 Finally, all we need to transform a script into symbols, is reading it as a
 string, encoding it in our alphabet, and use `Function` as `eval`.
