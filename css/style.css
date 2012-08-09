@@ -9,6 +9,9 @@ html{background:#FFFcolor:#000;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre
 /* box-sizing FTW! */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+/* micro-clearfix */
+.clearfix:before, .clearfix:after { content: " "; display: table; } .clearfix:after { clear: both; }
+
 html {
     overflow-y: scroll;
 }
@@ -46,31 +49,14 @@ h2 {
     margin-bottom: 10px;
 }
 
-#container {
-    background-color: #FFF;
-    background-color: rgba(255, 255, 255, 0.85);
-              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D8FFFFFF,endColorstr=#D8FFFFFF);
-                zoom: 1;
-    border-radius: 15px;
-    padding: 30px 50px;
-    width: 700px;
-    margin: 100px auto;
-    position: relative;
+strong {
+    font-weight: bold
 }
 
-#nav {
-    text-align: right;
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-}
-
-#nav li {
-    display: inline-block;
-}
 
 p {
     margin: 1em 0;
+    clear: both;
 }
 
 a {
@@ -83,18 +69,20 @@ a:hover {
 
 blockquote {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-left: 50px;
   padding-left: 15px;
   border-left: 3px solid #ccc;
   font-style: italic;
+  float: right;
 }
 
 blockquote p {
     margin: 0;
 }
 
-p code {
+p code,
+li code {
     display: inline-block;
     font-family: monospace;
     vertical-align: bottom;
@@ -105,6 +93,42 @@ p code {
     background-color: rgba(255, 255, 255, 0.8);
               filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
                 zoom: 1;
+}
+
+ul {
+    margin-bottom: 15px;
+}
+
+li {
+    margin-left: 15px;
+    margin-bottom: 5px;
+    list-style: disc inside;
+}
+
+#container {
+    background-color: #FFF;
+    background-color: rgba(255, 255, 255, 0.85);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D8FFFFFF,endColorstr=#D8FFFFFF);
+                zoom: 1;
+    border-radius: 15px;
+    padding: 30px 50px 50px 50px;
+    width: 700px;
+    margin: 100px auto;
+    position: relative;
+}
+
+#nav {
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    margin: 0;
+}
+
+#nav li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
 }
 
 .posts {
