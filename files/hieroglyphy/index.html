@@ -1,0 +1,60 @@
+---
+layout: default
+title: "Hieroglyphy"
+description: Transform any javascript into ()[]{}!+ charcters.
+---
+<style>
+textarea {
+    margin: 10px 0;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    float: right;
+    margin-left: 10px;
+}
+</style>
+
+<div>
+    <label for="input">Insert the script</label>
+</div>
+
+<div>
+    <textarea id="input"></textarea>
+</div>
+
+<div>
+    <label for="output">Your output</label>
+</div>
+
+<div>
+    <textarea id="output"></textarea>
+</div>
+
+<div class="clearfix">
+    <input id="string" type="button" value="Convert string">
+    <input id="script" type="button" value="Convert script">
+    <input id="number" type="button" value="Convert number">
+</div>
+
+<script src="https://raw.github.com/alcuadrado/hieroglyphy/master/hieroglyphy.js"></script>
+<script>
+    document.querySelector("#string").onclick = function () {
+        document.querySelector("#output").value = hieroglyphy.hieroglyphyString(
+                document.querySelector("#input").value.trim());
+    };
+
+    document.querySelector("#script").onclick = function () {
+        document.querySelector("#output").value = hieroglyphy.hieroglyphyScript(
+            document.querySelector("#input").value.trim());
+    };
+
+    document.querySelector("#number").onclick = function () {
+        document.querySelector("#output").value = hieroglyphy.hieroglyphyNumber(
+            +(document.querySelector("#input").value.trim()));
+    };
+</script>
