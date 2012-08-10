@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{% if page.name and page.name != "home" %} {{page.title}} | {% endif %}Patricio Palladino</title>
+        <title>{% if not page.name or page.name != "home" %} {{page.title}} | {% endif %}Patricio Palladino</title>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/syntax.css">
         <meta name="descrption" content="{{page.description}}">
