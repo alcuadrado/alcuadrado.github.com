@@ -211,7 +211,7 @@ room from improvments:
 
 * Once we were able to generate all ASCII characters, no effort was made to get
     the shortest representation of any of them.
-* When targeting modern browsers only or node.js, `btoa` would be a great help
+* When targeting modern browsers only, `btoa` would be a great help
     yielding lots of characters in shorter sequences.
 * Depending on the target, one may select a bigger alphabet for reducing the
     encoding size.
