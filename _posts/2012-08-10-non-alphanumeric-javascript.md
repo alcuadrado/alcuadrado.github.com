@@ -226,4 +226,21 @@ Acknowledgments
 Thanks to Matt for giving me the initial idea, helping me with the development
 and the redaction of this article.
 
-Don't miss his future entry on how can you use Hieroglyphy for XSS!
+Don't miss [his future entry](http://blog.infobytesec.com/2012/09/bypassing-wafs-with-non-alphanumeric-xss.html)
+on how can you use Hieroglyphy for XSS!
+
+Updates
+-------
+
+* As many people pointed out, there are other projects that encode javascript
+in a different way, but all the ones I have seen are either broken, incomplete,
+or they use a bast number of different characters.
+* [David Herman](https://twitter.com/littlecalculist) from mozilla and
+[Martin Kleppe](https://twitter.com/aemkei) from
+[Ubilabs](http://www.ubilabs.net/) where both workin on this at the same time.
+David's version is targeted at ES5 compatible js engines, and doesn't need a
+browser. Martin's trades off some portability by using function's toString
+in a commonly implemented non-standar way to use less characters.
+* Unluckly hieroglyphied code can't run in quirksmode on IE. It's impressive how
+MS takes backwards compatibility to the limit, disabling any improvement to the
+javascript engine (or maybe using another) in this mode.
