@@ -246,3 +246,12 @@ li {
     height: 18px !important;
     overflow: hidden;
 }
+
+.reddit_button {
+    font-size: 10px !important;
+}
+
+.reddit_button img {
+    height: 19px !important;
+    vertical-align: bottom !important;
+}
