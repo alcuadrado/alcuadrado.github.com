@@ -244,4 +244,5 @@ li {
 
 .hn-share-iframe {
     height: 18px !important;
+    overflow: hidden;
 }
