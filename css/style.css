@@ -17,23 +17,9 @@ html {
 }
 
 body {
-    background: url("/img/bg.jpg") no-repeat;
-    background-attachment: fixed;
     color: #1A1A1A;
     font-family: verdana;
     padding: 0;
-}
-
-@media all and (min-width: 1681px) {
-    body {
-        background-size: cover;
-    }
-}
-
-@media all and (min-height: 1051px) {
-    body {
-        background-size: cover;
-    }
 }
 
 h1 {
@@ -245,13 +231,14 @@ li {
 .hn-share-iframe {
     height: 18px !important;
     overflow: hidden;
+    width: 60px !important;
 }
 
 .reddit_button {
-    font-size: 10px !important;
+    font-size: 9px !important;
 }
 
 .reddit_button img {
-    height: 19px !important;
+    height: 15px !important;
     vertical-align: bottom !important;
 }
