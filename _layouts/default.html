@@ -18,29 +18,36 @@
         </script>
     </head>
     <body>
-        <div id="container" {% if page.name %} class="{{page.name}}" {% endif %}>
+        <div id="container" {% if page.name %} class="{{page.name}}" {% else %} class="post" {% endif %}>
             <h1>{{page.title}}</h1>
             {{content}}
+
             <div id="share">
                 <a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a>
                 <script type="text/javascript" src="http://www.reddit.com/buttonlite.js?i=1"></script>
                 <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
             </div>
+
             <ul id="nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="https://github.com/alcuadrado">Github</a></li>
-                <!-- <li><a href="http://pafsis.com">My Company</a></li> -->
                 <li><a class="email" href="http://www.google.com/recaptcha/mailhide/d?k=015jNyUwb5krY_855ESlq8vg==&amp;c=JamIaqZXM7GDH5d4QGYtFcW5CpWDn9GvvYWek28MRwQ=">email</a></li>
             </ul>
+
         </div>
 
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="/js/trianglify.min.js"></script>
         <script>
             var t = new Trianglify({noiseIntensity: 0});
-            var pattern = t.generate(window.innerWidth, window.innerHeight);
-            document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
+            var pattern;
+            if (document.body.parentNode.offsetHeight == 0) {
+                pattern = t.generate(window.innerWidth, window.innerHeight);
+            } else {
+                pattern = t.generate(document.body.parentNode.offsetHeight, document.body.parentNode.offsetHeight);
+            }
+            document.body.parentNode.setAttribute('style', 'background-image: '+pattern.dataUrl);
         </script>
 
 
