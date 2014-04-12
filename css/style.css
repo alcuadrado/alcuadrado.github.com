@@ -16,6 +16,14 @@ html {
     -o-background-size: cover;
     background-size: cover;
     min-height: 100%;
+
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#FFFFFF));
+  background-image: -webkit-linear-gradient(top, #cccccc, #FFFFFF);
+  background-image:    -moz-linear-gradient(top, #cccccc, #FFFFFF);
+  background-image:      -o-linear-gradient(top, #cccccc, #FFFFFF);
+  background-image:         linear-gradient(to bottom, #cccccc, #FFFFFF);
+
 }
 
 body {
