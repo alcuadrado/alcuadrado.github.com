@@ -216,7 +216,7 @@ room from improvments:
 * Depending on the target, one may select a bigger alphabet for reducing the
     encoding size.
 * If we know the domain where the script would be run, more characters can be
-    graved from it.
+    derived from it.
 <!-- * When working with XSS during a pentest, you will find appropiate to
     easily get the characters of your need by using the current domain. -->
 
@@ -234,13 +234,13 @@ Updates
 
 * As many people pointed out, there are other projects that encode javascript
 in a different way, but all the ones I have seen are either broken, incomplete,
-or they use a bast number of different characters.
+or they use a vast number of different characters.
 * [David Herman](https://twitter.com/littlecalculist) from mozilla and
 [Martin Kleppe](https://twitter.com/aemkei) from
-[Ubilabs](http://www.ubilabs.net/) where both workin on this at the same time.
+[Ubilabs](http://www.ubilabs.net/) where both working on this at the same time.
 David's version is targeted at ES5 compatible js engines, and doesn't need a
 browser. Martin's trades off some portability by using function's toString
-in a commonly implemented non-standar way to use less characters.
+in a commonly implemented non-standard way to use fewer characters.
 * Unluckly hieroglyphied code can't run in quirksmode on IE. It's impressive how
 MS takes backwards compatibility to the limit, disabling any improvement to the
 javascript engine (or maybe using another) in this mode.
