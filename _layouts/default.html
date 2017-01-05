@@ -32,25 +32,10 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="https://github.com/alcuadrado">Github</a></li>
-                <li><a href="/cv.pdf">CV</a></li>
                 <li><a class="email" href="http://www.google.com/recaptcha/mailhide/d?k=015jNyUwb5krY_855ESlq8vg==&amp;c=JamIaqZXM7GDH5d4QGYtFcW5CpWDn9GvvYWek28MRwQ=">email</a></li>
             </ul>
 
         </div>
-
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-        <script src="/js/trianglify.min.js"></script>
-        <script>
-            var t = new Trianglify({noiseIntensity: 0});
-            var pattern;
-            if (document.body.parentNode.offsetHeight == 0) {
-                pattern = t.generate(window.innerWidth, window.innerHeight);
-            } else {
-                pattern = t.generate(document.body.parentNode.offsetHeight, document.body.parentNode.offsetHeight);
-            }
-            document.body.parentNode.setAttribute('style', 'background-image: '+pattern.dataUrl);
-        </script>
-
 
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <script>
@@ -61,6 +46,5 @@
                 s.parentNode.insertBefore(g, s);
             }(document, 'script'));
         </script>
-        <script src="/js/email.h.js"></script>
     </body>
 </html>
